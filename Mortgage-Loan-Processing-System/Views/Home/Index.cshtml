@@ -2,35 +2,35 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<script>
-    function signIN(){
-    
-    }
-</script>
-<style>
-    .button {
-        height: 40px;
-        width: 150px;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        background-color: dodgerblue;
-        border-color: dodgerblue;
-        border-radius: 10px
-    }
-    .button2 {
-        height: 40px;
-        width: 450px;
-        font-size: 18px;
-        font-weight:bold;
-        color: white;
-        background-color:indianred;
-        border-color: indianred;
-        border-radius: 10px
-    }
-    
-</style>
+<html>
+<head>    
+    <style>
+        .button {
+            height: 40px;
+            width: 150px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-radius: 10px;
+           
+            
+        }
 
+        .button2 {
+            height: 40px;
+            width: 450px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: indianred;
+            border-color: indianred;
+            border-radius: 10px
+        }
+    </style>
+</head>
+<body background="~/BG.png">
     <div style="text-align:center">
         <br />
         <h2 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h2>
@@ -41,28 +41,34 @@
         <br />
     </div>
     <div style="text-align:center">
-        <div>
-            <label style="font-size:18px">Username:</label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" style="border-radius:10px" />
-            <br />
-            <br />
-            <label style="font-size:18px">Password:</label>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="text" style="border-radius:10px" />
-            <br />
-            <br />
-            @Html.ActionLink("Forgot password", "Index")
-            <br />
-            <br />
-            <button class="button" onclick="">Sign in</button>
-            
-            <br />
-            <br />
-            <br />
-            <br />
-            <button class="button2">Continue as Guest</button>
+        @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
+        {
+            <div>
+                <label style="font-size:18px">Username:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" style="border-radius:10px" />
+                <br />
+                <br />
+                <label style="font-size:18px">Password:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" style="border-radius:10px" />
+                <br />
+                <br />
+                @Html.ActionLink("Forgot password", "Index")
+                <br />
+                <br />
+                @*<button class="button" onclick="">@Html.ActionLink("Sign In","Enquiry",new {Style="color:white;"})</button>*@
+                <input type="submit" value="Sign In" class="button" />
+                <br />
+                <br />
+                <br />
+                <br />
+                <button class="button2">Continue as Guest</button>
 
+            </div>
+        }
         </div>
-    </div>
+        
+</body>
+</html>
 

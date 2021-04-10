@@ -2,60 +2,136 @@
 @{
     ViewBag.Title = "Enquiry";
 }
+<html>
+<head>
+    <style>
+        .button {
+            height: 40px;
+            width: 350px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-radius: 10px
+        }
 
-<style>
-    .button {
-        height: 40px;
-        width: 150px;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        background-color: dodgerblue;
-        border-color: dodgerblue;
-        border-radius: 10px
-    }
-
-    .button2 {
-        height: 40px;
-        width: 450px;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        background-color: indianred;
-        border-color: indianred;
-        border-radius: 10px
-    }
-</style>
-<div>
-    <br />
-    <h4 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h4>
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
-</div>
-@*<div style="text-align:center">
+        .button2 {
+            height: 40px;
+            width: 450px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: indianred;
+            border-color: indianred;
+            border-radius: 10px
+        }
+    </style>
+</head>
+<body background="~/enq.jpg">    
     <div>
-        <label style="font-size:18px">Username:</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" style="border-radius:10px" />
+        <br />
+        <h3 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h3>
         <br />
         <br />
-        <label style="font-size:18px">Password:</label>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="text" style="border-radius:10px" />
-        <br />
-        <br />
-        @Html.ActionLink("Forgot password", "Index")
-        <br />
-        <br />
-        <button class="button">Sign in</button>
-        <br />
-        <br />
-        <br />
-        <br />
-        <button class="button2">Continue as Guest</button>
     </div>
-</div>*@
+
+    <p style="text-align:center; font-size:20px; font-weight:400; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+        Santander UK offers home loans with EMIs starting from ₹646 per lac and interest rates starting from 6.70%* p.a..
+        Create a space of your own with Santander UK Home Loans.
+        Our housing loan is tailor made for salaried individuals as they offer an attractive rate of interest and a longer tenure.
+        We also provide you with legal and technical counselling to help you make the right home buying decision.
+        Santander UK Housing Loan offers you all online Home Loan solutions if you want to buy, construct or renovate your house.
+        Turn your dream home into reality with Santander UK Home Loans With benefits such as a low-interest rate, longer tenure, comfortable home loan EMI and doorstep service, apply online for an Santander UK Home Loan today.
+    </p>
+
+    <div>
+        <br />
+        <h3 style="font-weight:bold">Key Features:</h3>
+        <ul style="font-size:20px; font-family:'Segoe UI'" ;>
+            <li>Home Loans for purchase of a flat, row house, bungalow from private developers in approved projects.</li>
+            <li>Expert legal and technical counselling to help you make the right home buying decision</li>
+            <li>Home Loans for purchase of properties from Development Authorities such as DDA, MHADA etc</li>
+            <li>Integrated branch network for availing and servicing the Home Loans anywhere in India</li>
+            <li>Loans for purchase of properties in an existing Co-operative Housing Society or Apartment Owners' Association or Development Authorities settlements or privately built up homes</li>
+            <li>Loans for construction on a freehold / lease hold plot or on a plot allotted by a Development Authority</li>
+        </ul>
+        <br />
+        <h3 style="font-weight:bold">Required Documents:</h3>
+        <ul style="font-size:20px; font-family:'Segoe UI'" ;>
+            <li>
+                Proof of both Identity and Residence (KYC)
+                <ul>
+                    <li>Passport</li>
+                    <li>Aadhar card</li>
+                    <li>Voter ID</li>
+                    <li>Driver License</li>
+                </ul>
+            </li>
+            <li>
+                Proof of income
+                <ul>
+                    <li>Last 3 months' Salary Slips</li>
+                    <li>Last 6 months' Bank Statements, showing salary credits</li>
+                    <li>Latest Form-16 and IT returns</li>
+                </ul>
+            </li>
+            <li>
+                Property related documents
+                <ul>
+                    <li>
+                        For New Homes
+                        <ul>
+                            <li>Copy of the Allotment Letter / Buyer Agreement</li>
+                            <li>Receipt/(s) of payment/(s) made to the developer</li>
+                        </ul>
+                    </li>
+                    <li>
+                        For Resale Homes
+                        <ul>
+                            <li>Title Deeds including previous chain of the property documents</li>
+                            <li>Receipt/(s) of initial payment/(s) made to the seller</li>
+                            <li>Copy of the agreement to sell (if already executed)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        For Construction
+                        <ul>
+                            <li>Title Deeds of the Plot </li>
+                            <li>Proof of no encumbrances on the property</li>
+                            <li>Copy of the plans, approved by the Local Authorities</li>
+                            <li>Construction estimate by an Architect / Civil engineer</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                Other Documents for Home Loan
+                <ul>
+                    <li>Own Contribution Proof</li>
+                    <li>Employment Contract / Appointment Letter in case current employment is less than year old</li>
+                    <li>Last 6 months' Bank Statements showing repayment of any ongoing loans</li>
+                    <li>Passport size photograph of all the applicants / co-applicants to be affixed on the Application form and signed across.</li>
+                    <li>Cheque for processing fee favouring Santander UK.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div style="text-align:center">
+        <br />
+        <br />
+        @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
+        {
+            <input type="submit" value="Apply for Mortgage loan" class="button" />
+        }
+        <br />
+        <br />
+        @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+        {
+            <input type="submit" value="Back to Home" class="button2" />
+        }
+    </div>
+</body>
+</html>
+
 
