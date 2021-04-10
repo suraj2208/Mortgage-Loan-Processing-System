@@ -1,9 +1,68 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<script>
+    function signIN(){
+    
+    }
+</script>
+<style>
+    .button {
+        height: 40px;
+        width: 150px;
+        font-size: 18px;
+        font-weight: bold;
+        color: white;
+        background-color: dodgerblue;
+        border-color: dodgerblue;
+        border-radius: 10px
+    }
+    .button2 {
+        height: 40px;
+        width: 450px;
+        font-size: 18px;
+        font-weight:bold;
+        color: white;
+        background-color:indianred;
+        border-color: indianred;
+        border-radius: 10px
+    }
+    
+</style>
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
+    <div style="text-align:center">
+        <br />
+        <h2 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h2>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+    </div>
+    <div style="text-align:center">
+        <div>
+            <label style="font-size:18px">Username:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" style="border-radius:10px" />
+            <br />
+            <br />
+            <label style="font-size:18px">Password:</label>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="text" style="border-radius:10px" />
+            <br />
+            <br />
+            @Html.ActionLink("Forgot password", "Index")
+            <br />
+            <br />
+            <button class="button" onclick="">Sign in</button>
+            
+            <br />
+            <br />
+            <br />
+            <br />
+            <button class="button2">Continue as Guest</button>
+
+        </div>
+    </div>
+
