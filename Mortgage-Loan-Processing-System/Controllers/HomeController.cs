@@ -31,5 +31,10 @@ namespace Mortgage_Loan_Processing_System.Controllers
             return View();
         }
 
+        public ActionResult emiCal()
+        {
+            return View();
+        }
+
     }
 }

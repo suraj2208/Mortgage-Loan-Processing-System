@@ -28,34 +28,49 @@
         }
     </style>
 </head>
-<body background="~/enq.jpg">    
+<body background="~/enq.jpg">
     <div>
         <br />
-        <h3 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h3>
+        <h3 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h3>       
+    </div>
+    <div style="text-align:center;">
+        
+        <img src="~/logoWBG.png" height="200" width="200" />
         <br />
-        <br />
+       
+        <p style="font-size:20px; font-weight:400; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+            Santander UK offers home loans with EMIs starting from ₹646 per lac and interest rates starting from 6.70%* p.a..
+            Create a space of your own with Santander UK Home Loans.
+            Our housing loan is tailor made for salaried individuals as they offer an attractive rate of interest and a longer tenure.
+            We also provide you with legal and technical counselling to help you make the right home buying decision.
+            Santander UK Housing Loan offers you all online Home Loan solutions if you want to buy, construct or renovate your house.
+            Turn your dream home into reality with Santander UK Home Loans With benefits such as a low-interest rate, longer tenure, comfortable home loan EMI and doorstep service, apply online for an Santander UK Home Loan today.
+        </p>
     </div>
 
-    <p style="text-align:center; font-size:20px; font-weight:400; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
-        Santander UK offers home loans with EMIs starting from ₹646 per lac and interest rates starting from 6.70%* p.a..
-        Create a space of your own with Santander UK Home Loans.
-        Our housing loan is tailor made for salaried individuals as they offer an attractive rate of interest and a longer tenure.
-        We also provide you with legal and technical counselling to help you make the right home buying decision.
-        Santander UK Housing Loan offers you all online Home Loan solutions if you want to buy, construct or renovate your house.
-        Turn your dream home into reality with Santander UK Home Loans With benefits such as a low-interest rate, longer tenure, comfortable home loan EMI and doorstep service, apply online for an Santander UK Home Loan today.
-    </p>
-
     <div>
         <br />
-        <h3 style="font-weight:bold">Key Features:</h3>
-        <ul style="font-size:20px; font-family:'Segoe UI'" ;>
-            <li>Home Loans for purchase of a flat, row house, bungalow from private developers in approved projects.</li>
-            <li>Expert legal and technical counselling to help you make the right home buying decision</li>
-            <li>Home Loans for purchase of properties from Development Authorities such as DDA, MHADA etc</li>
-            <li>Integrated branch network for availing and servicing the Home Loans anywhere in India</li>
-            <li>Loans for purchase of properties in an existing Co-operative Housing Society or Apartment Owners' Association or Development Authorities settlements or privately built up homes</li>
-            <li>Loans for construction on a freehold / lease hold plot or on a plot allotted by a Development Authority</li>
-        </ul>
+        <hr />
+        <br />
+        <table>
+            <tr>
+                <td>
+                    <img src="~/kF.png" height="200" width="250" />
+                </td>
+                <td style="padding: 0px 0px 0px 80px">
+                    <ul style="font-size:20px; font-family:'Segoe UI'" ;>
+                        <li>Home Loans for purchase of a flat, row house, bungalow from private developers in approved projects.</li>
+                        <li>Expert legal and technical counselling to help you make the right home buying decision</li>
+                        <li>Home Loans for purchase of properties from Development Authorities such as DDA, MHADA etc</li>
+                        <li>Integrated branch network for availing and servicing the Home Loans anywhere in India</li>
+                        <li>Loans for purchase of properties in an existing Co-operative Housing Society or Apartment Owners' Association or Development Authorities settlements or privately built up homes</li>
+                        <li>Loans for construction on a freehold / lease hold plot or on a plot allotted by a Development Authority</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        <br />
+        <hr />
         <br />
         <h3 style="font-weight:bold">Required Documents:</h3>
         <ul style="font-size:20px; font-family:'Segoe UI'" ;>
@@ -118,6 +133,8 @@
         </ul>
     </div>
     <div style="text-align:center">
+        <br />
+        <hr />
         <br />
         <br />
         @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
