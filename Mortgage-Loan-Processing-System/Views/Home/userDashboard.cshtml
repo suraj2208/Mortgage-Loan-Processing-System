@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<Mortgage_Loan_Processing_System.Application>
 @{
     ViewBag.Title = "userDashboard";
 }
@@ -42,32 +42,69 @@
             <td style="padding-left:50px">
                 @Html.ActionLink("Logout", "Index")
             </td>
-        </tr>        
+        </tr>
     </table>
     <hr />
+    <div style="text-align:center; height:400px">
+        @if (Model.Count() == 0)
+        {
+            <h4>No applications found</h4>
+        }
+        else
+        { <table class="table">
+              <tr >
+                  <th>
+                      Application ID
+                  </th>
+                  <th>
+                      Poperty value
+                  </th>
+                  <th>
+                      Expected Loan Amount
+                  </th>
+                  <th>
+                      Date of application
+                  </th>
+                  <th>
+                      Status
+                  </th>
+                  <th></th>
+              </tr>
+    @foreach (var item in Model)
+    {
+          <tr>
+              <td>
+                  @Html.DisplayFor(modelItem => item.ApplicationID)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.PropertyValue)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Expected_Loan_Amount)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.DateOfApplication)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Status)
+              </td>
+              <td>
+                  @Html.ActionLink("View", "userDashboard", new { id = item.username})
+              </td>
+          </tr>
+    }
+</table>
+                }
+
+        </div>
     <div style="text-align:center">
-        <h4>No applications found</h4>
-    </div>
-    <div style="text-align:center">
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        @using (Html.BeginForm("Enquiry", "Home",new { id= ViewBag.username }, FormMethod.Post))
+        @using (Html.BeginForm("Enquiry", "Home", new { id = ViewBag.username }, FormMethod.Post))
         {
             <input type="submit" value="Apply for Mortgage loan" class="button" />
         }
         <br />
         <br />
-        @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
+        @using (Html.BeginForm("Enquiry", "Home", new { id = ViewBag.username }, FormMethod.Post))
         {
             <input type="submit" value="Know more" class="button2" />
         }

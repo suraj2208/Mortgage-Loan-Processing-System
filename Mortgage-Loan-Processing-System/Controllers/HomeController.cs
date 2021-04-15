@@ -72,16 +72,8 @@ namespace Mortgage_Loan_Processing_System.Controllers
         }
         public ActionResult Enquiry(string id)
         {
-            ViewBag.username = id;
-            if (id=="guest")
-            {
-                return RedirectToAction("usrReg");
-            }
-            else
-            {
-                return View();
-            }
-            
+            ViewBag.username = id;            
+            return View();
         }
 
         public ActionResult emiCal()
@@ -122,8 +114,16 @@ namespace Mortgage_Loan_Processing_System.Controllers
 
         public ActionResult applicationForm(string id)
         {
-            ViewBag.Message = id;
-            return View();
+            if (id=="guest")
+            {
+                return RedirectToAction("userReg");
+            }
+            else
+            {
+                ViewBag.Message = id;
+                return View();
+            }
+            
         }
 
         public ActionResult LoanApplication(string type,string value, string amount, int tenure, string aadhar, string pan, string account,string link, string id)
@@ -144,8 +144,8 @@ namespace Mortgage_Loan_Processing_System.Controllers
 
             mlps.Applications.Add(newApplication);
             mlps.SaveChanges();
-
-            return View();
+            ViewBag.Message = id;
+            return RedirectToAction("userDashboard",new { id=id});
         }
 
         public ActionResult userDashboard(string id )
@@ -153,7 +153,18 @@ namespace Mortgage_Loan_Processing_System.Controllers
             Customer customer = mlps.Customers.Find(id);
             ViewBag.username = id;
             ViewBag.Message = customer.name;
-            return View();
+
+            List<Application> userApplications = new List<Application>();
+            var list = mlps.Applications.ToList();
+            foreach (var item in list)
+            {
+                if (item.username == customer.username)
+                {
+                    userApplications.Add(item);
+                }
+            }
+
+            return View(userApplications);
         }
 
         

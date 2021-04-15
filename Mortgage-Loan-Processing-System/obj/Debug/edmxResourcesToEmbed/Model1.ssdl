@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="ApplicationID" />
     </Key>
-    <Property Name="ApplicationID" Type="int" Nullable="false" />
+    <Property Name="ApplicationID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PropertyType" Type="varchar" MaxLength="50" />
     <Property Name="PropertyValue" Type="varchar" MaxLength="50" />
     <Property Name="Expected Loan Amount" Type="varchar" MaxLength="50" />
