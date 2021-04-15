@@ -1,0 +1,141 @@
+﻿
+@{
+    ViewBag.Title = "Registration";
+}
+<html>
+<head>
+    <style>
+        .button {
+            height: 40px;
+            width: 150px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body background="~/BG.png">
+    <div style="text-align:center">
+        <h2 style="font-weight:bold">Registration</h2>
+        <br />
+        <br />
+    </div>
+    <div>
+        <br />
+        <br />
+        @using (Html.BeginForm("userRegistration", "Home", FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td style="padding-left:70px">
+                        <label style="font-size:18px">Username:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="username" required />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Password:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="password" required />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:70px">
+                        <label style="font-size:18px">Full Name:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="name" required />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Email:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="email" required />
+                        <br />
+                        <br />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td style="padding-left:70px">
+                        <label style="font-size:18px">Contact Number:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="contact" required />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Date of birth:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">                        
+                        <input type="date" style="border-radius:10px; width:180px" name="dob" required/>
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:70px">
+                        <label style="font-size:18px">Gender:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <select name="gender" style="border-radius:10px;border-width:2px ; width:180px;height:25px">
+                            <option value="m">Male</option>
+                            <option value="f">Female</option>
+                            <option value="NA">I prefer not to say</option>
+                        </select>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Address:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="address" required />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+            </table>
+
+
+            <br />
+            <br />
+
+            <div style="text-align:center">
+                <input type="submit" value="Register" class="button" />
+            </div>
+        }
+    </div>
+   
+
+</body>
+</html>
+

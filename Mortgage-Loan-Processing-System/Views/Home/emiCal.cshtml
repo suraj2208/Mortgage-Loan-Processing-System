@@ -44,55 +44,86 @@
             <tr>
                 <td>
                     <br />
-                    <label id="head" style="font-size:20px">Mortgage Loan Amount</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="amount" oninput='loanAmount.value = amount.value' value='100000' onchange="showUp()" style="border-radius:5px" /> Rs.
+                    <table>
+                        <tr>
+                            <td>
+                                <label id="head" style="font-size:20px">Mortgage Loan Amount</label>
+                            </td>
+                            <td style="padding-left:50px">
+                                <input type="text" id="amount" oninput='loanAmount.value = amount.value' value='100000' onchange="showUp()" style="border-radius:5px" /> 
+                            </td>
+                            <td style="padding-left:10px">
+                                <h4>₹</h4>
+                            </td>
+                        </tr>
+                    </table>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                     <center>
                         <input class="range" id="loanAmount" type="range" value="100000" min="0"
                                oninput='amount.value=loanAmount.value' step="100000" max="50000000" onchange="showUp()" />
                     </center>
                     <br />
                     <br />
-                    <label style="font-size:20px">Interest Rate</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="rate" oninput='interestRate.value = rate.value' value='6' style="border-radius:5px" onchange="showUp()" />%
+                    <table>
+                        <tr>
+                            <td>
+                                <label style="font-size:20px">Interest Rate</label>
+                            </td>
+                            <td style="padding-left:150px">
+                                <input type="text" id="rate" oninput='interestRate.value = rate.value' value='6' style="border-radius:5px" onchange="showUp()" />
+                            <td style="padding-left:10px">
+                                <h4 style="font-weight:bold">%</h4>
+                            </td>
+</td>
+                        </tr>
+                    </table>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
                     <center>
                         <input class="range" id="interestRate" type="range" value="6" min="1"
                                oninput='rate.value=interestRate.value' step="0.5" max="30" onchange="showUp()" />
                     </center>
                     <br />
                     <br />
-                    <label style="font-size:20px">Loan Tenure</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" id="time" oninput='tenure.value = time.value' value='10' style="border-radius:5px" onchange="showUp()" />Yr.
+                    <table>
+                        <tr>
+                            <td>
+                                <label style="font-size:20px">Loan Tenure</label>
+                            </td>
+                            <td style="padding-left:150px">
+                                <input type="text" id="time" oninput='tenure.value = time.value' value='10' style="border-radius:5px" onchange="showUp()" />
+
+                            </td>
+                            <td style="padding-left:10px">
+                                <h4 style="font-weight:bold">Yr</h4>
+                            </td>
+                        </tr>
+                    </table>
                     <br />
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    
                     <center>
                         <input class="range" id="tenure" type="range" value="10" min="1"
                                oninput='time.value=tenure.value' step="0.5" max="30" onchange="showUp()" />
                     </center>
                 </td>
-                <td style="padding: 0px 0px 0px 350px">
-                    <h4>Loan EMI</h4>
-                    <h2 id="emi"></h2>
-                    <p>-------------------------------------------------</p>                    
-                    <h4>Total Interest Payable</h4>
-                    <h2 id="interest"></h2>
-                    <p>-------------------------------------------------</p>
-                    <h4>
-                        Total Payment
-                    </h4>
-                    <h4>(Principal + Interest)</h4>
-                    <h2 id="total"></h2>
-                </td>
-            </tr>
-        </table>
+                            <td style="padding: 0px 0px 0px 350px">
+                                <h4>Loan EMI</h4>
+                                <h2 id="emi"></h2>
+                                <p>-------------------------------------------------</p>
+                                <h4>Total Interest Payable</h4>
+                                <h2 id="interest"></h2>
+                                <p>-------------------------------------------------</p>
+                                <h4>
+                                    Total Payment
+                                </h4>
+                                <h4>(Principal + Interest)</h4>
+                                <h2 id="total"></h2>
+                            </td>
+                        </tr>
+                    </table>
 
-    </div>
+</div>
     <script>
         function showUp() {
             var amount = document.getElementById("amount").value;

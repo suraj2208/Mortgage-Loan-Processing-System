@@ -28,7 +28,7 @@
         }
     </style>
 </head>
-<body background="~/enq.jpg">
+<body style="background-color: #b0ebff">
     <div>
         <br />
         <h3 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h3>       
@@ -72,7 +72,9 @@
         <br />
         <hr />
         <br />
+
         <h3 style="font-weight:bold">Required Documents:</h3>
+        
         <ul style="font-size:20px; font-family:'Segoe UI'" ;>
             <li>
                 Proof of both Identity and Residence (KYC)
@@ -82,7 +84,9 @@
                     <li>Voter ID</li>
                     <li>Driver License</li>
                 </ul>
+                <hr />
             </li>
+            
             <li>
                 Proof of income
                 <ul>
@@ -90,6 +94,7 @@
                     <li>Last 6 months' Bank Statements, showing salary credits</li>
                     <li>Latest Form-16 and IT returns</li>
                 </ul>
+                <hr />
             </li>
             <li>
                 Property related documents
@@ -100,6 +105,7 @@
                             <li>Copy of the Allotment Letter / Buyer Agreement</li>
                             <li>Receipt/(s) of payment/(s) made to the developer</li>
                         </ul>
+                        <hr />
                     </li>
                     <li>
                         For Resale Homes
@@ -108,6 +114,7 @@
                             <li>Receipt/(s) of initial payment/(s) made to the seller</li>
                             <li>Copy of the agreement to sell (if already executed)</li>
                         </ul>
+                        <hr />
                     </li>
                     <li>
                         For Construction
@@ -119,6 +126,7 @@
                         </ul>
                     </li>
                 </ul>
+                <hr />
             </li>
             <li>
                 Other Documents for Home Loan
@@ -129,6 +137,7 @@
                     <li>Passport size photograph of all the applicants / co-applicants to be affixed on the Application form and signed across.</li>
                     <li>Cheque for processing fee favouring Santander UK.</li>
                 </ul>
+              
             </li>
         </ul>
     </div>
@@ -137,7 +146,7 @@
         <hr />
         <br />
         <br />
-        @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
+        @using (Html.BeginForm("applicationForm", "Home", new {id=ViewBag.username} , FormMethod.Post))
         {
             <input type="submit" value="Apply for Mortgage loan" class="button" />
         }

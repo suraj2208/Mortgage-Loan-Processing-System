@@ -28,6 +28,16 @@
             border-color: indianred;
             border-radius: 10px
         }
+        .button3 {
+            height: 40px;
+            width: 450px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color:darkolivegreen;
+            border-color:darkolivegreen;
+            border-radius: 10px
+        }
     </style>
 </head>
 <body background="~/BG.png">
@@ -35,35 +45,46 @@
         <br />
         <h2 style="font-style:italic;font-weight:bold">Mortgage Loan Processing System</h2>
         <img src="~/logoWBG.png" height="200" width="200"/>
-    </div>
-    <div style="text-align:center">
-        @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
-        {
-            <div>
-                <label style="font-size:18px">Username:</label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" style="border-radius:10px" />
-                <br />
-                <br />
-                <label style="font-size:18px">Password:</label>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input type="text" style="border-radius:10px" />
-                <br />
-                <br />
-                @Html.ActionLink("Forgot password", "Index")
-                <br />
-                <br />
-                @*<button class="button" onclick="">@Html.ActionLink("Sign In","Enquiry",new {Style="color:white;"})</button>*@
-                <input type="submit" value="Sign In" class="button" />
-                <br />
-                <br />
-                <br />
-                <br />
-                <button class="button2">Continue as Guest</button>
-
-            </div>
-        }
         </div>
+        <div style="text-align:center">
+            @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+            {
+                <div>
+                    <label style="font-size:18px">UserName:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="text" style="border-radius:10px" name="username" required />
+                    <br />
+                    <br />
+                    <label style="font-size:18px">Password:</label>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="password" style="border-radius:10px" name="password" required />
+                    <br />
+                    <br />
+                    @Html.ActionLink("Forgot password", "Index")
+                    <br />
+                    <br />
+                    @*<button class="button" onclick="">@Html.ActionLink("Sign In","Enquiry",new {Style="color:white;"})</button>*@
+                    <input type="submit" value="Sign In" class="button" />
+                </div>
+            }
+        <div>
+            <br />
+            <br />
+            <br />
+            <br />
+            @using (Html.BeginForm("Enquiry", "Home",new { id="guest"}, FormMethod.Post))
+            {
+                <input type="submit" value="Continue as Guest" class="button2" formnovalidate />
+            }
+            <h4>Or</h4>
+            @using (Html.BeginForm("userReg", "Home"))
+            {
+                <input type="submit" value="Register with us" class="button3" formnovalidate />
+            }
+
+        </div>
+        
+    </div>
         
 </body>
 </html>

@@ -3,7 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link rel="shortcut icon" type="image/ico" href="~/logoWBG.png">
+    <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
@@ -15,10 +16,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>                
-                <p style="color:white">
-                    @Html.ActionLink("Santander UK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })                    
-                </p>
+                </button>
+                <table>
+                    <tr>
+                        <td>
+                            <img src="~/logo.jpg" class="img-center" height="50" width="50" style="border-radius:100px"/>
+                        </td>
+                        <td style="padding-left:15px">
+                            <p style="color:white; font-weight:bold">
+                                @Html.ActionLink("Santander UK", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                
+               
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav" style="text-align:right">

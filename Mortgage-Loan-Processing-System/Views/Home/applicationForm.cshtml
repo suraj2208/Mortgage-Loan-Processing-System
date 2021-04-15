@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Apply";
+}
+<html>
+<head>
+    <style>
+        .button {
+            height: 40px;
+            width: 150px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body background="~/BG.png">
+    <div style="text-align:center">
+        <h2 style="font-weight:bold">Application Form</h2>
+        <br />
+        <br />
+    </div>
+    <div>
+        <br />
+        <br />
+        @using (Html.BeginForm("LoanApplication", "Home" ,new {id=ViewBag.Message}, FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Property Type:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <select name="type" style="border-radius:10px;border-width:2px ; width:180px;height:25px">
+                            <option value="Residential Property">Residential Property</option>
+                            <option value="Commertial Property">Commertial Property</option>
+                            <option value="Proprty with Multiple owners">Proprty with Multiple owners</option>
+                        </select>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Property value:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="value" required />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Expected Loan Amount:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="amount" required />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Tenure(in Years):</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="tenure" required />
+                        <br />
+                        <br />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Aadhar Number:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px" name="aadhar" required />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">PAN Number:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px; width:180px" name="pan" required />
+                        <br />
+                        <br />
+                    </td>                    
+                </tr>                
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Bank account number:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px; width:180px" name="account" required />
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Documents Link:</label>
+                        <br />
+                        <br />
+                    </td>                    
+                    <td style="padding-left:50px">
+                        <input type="text" style="border-radius:10px; width:180px" name="dob" required />
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>   
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                    <td style="padding-left:50px">
+                        <h5 style="color:darkred">*(Note: Please uplaod the required document</h5>                        
+                    </td>
+                    <td>
+                        <h5 style="color:darkred"> s in google drive and paste the link here.)</h5>
+                    </td>
+                </tr>
+            </table>            
+
+            <br />
+            <br />
+
+            <div style="text-align:center">
+                <input type="submit" value="Apply" class="button" />
+            </div>
+        }
+    </div>
+
+
+</body>
+</html>
+

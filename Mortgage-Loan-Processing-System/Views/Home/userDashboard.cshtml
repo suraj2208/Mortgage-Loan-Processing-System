@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "userDashboard";
+}
+<html>
+<head>
+    <style>
+        .button {
+            height: 40px;
+            width: 350px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-radius: 10px
+        }
+
+        .button2 {
+            height: 40px;
+            width: 450px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: indianred;
+            border-color: indianred;
+            border-radius: 10px
+        }
+    </style>
+</head>
+<body background="~/BG.png">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <h2>Hi, @ViewBag.Message</h2>
+                </div>
+            </td>
+            <td style="padding-left:850px">
+                @Html.ActionLink("Profile", "Index")
+            </td>
+            <td style="padding-left:50px">
+                @Html.ActionLink("Logout", "Index")
+            </td>
+        </tr>        
+    </table>
+    <hr />
+    <div style="text-align:center">
+        <h4>No applications found</h4>
+    </div>
+    <div style="text-align:center">
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        @using (Html.BeginForm("Enquiry", "Home",new { id= ViewBag.username }, FormMethod.Post))
+        {
+            <input type="submit" value="Apply for Mortgage loan" class="button" />
+        }
+        <br />
+        <br />
+        @using (Html.BeginForm("Enquiry", "Home", FormMethod.Post))
+        {
+            <input type="submit" value="Know more" class="button2" />
+        }
+    </div>
+</body>
+</html>
+
