@@ -99,7 +99,7 @@
                         <td>
                             @using (Html.BeginForm("report", "Home", new { id = item.ApplicationID + "," + ViewBag.id }, FormMethod.Post))
                             {
-                                <input type="text" style="border-radius:10px" name="report" placeholder="Report Link" required />
+                                <input type="text" style="border-radius:10px" name="report" placeholder="Report" required />
                                 <input type="submit" value="Submit Report" class="button2" />
                             }
                         </td>
