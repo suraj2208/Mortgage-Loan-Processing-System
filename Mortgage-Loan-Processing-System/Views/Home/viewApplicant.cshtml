@@ -27,96 +27,99 @@
     <div>
         <br />
         <br />
-        @using (Html.BeginForm("Dashboard", "Home", new { id = ViewBag.username }, FormMethod.Post))
-        {
-            <table>
-                <tr>
-                    <td style="padding-left:50px">
-                        <label style="font-size:18px">Name:</label>
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:50px">
-                        @Html.DisplayFor(model => model.name)
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:150px">
-                        <label style="font-size:18px">Email:</label>
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:50px">
-                        @Html.DisplayFor(model => model.email)
-                        <br />
-                        <br />
-                    </td>
-                </tr>
-                <tr>
-                    <td style="padding-left:50px">
-                        <label style="font-size:18px">Contact Number:</label>
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:50px">
-                        @Html.DisplayFor(model => model.contactNumber)
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:150px">
-                        <label style="font-size:18px">Gender:</label>
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:50px">
-                        @if (Model.gender == "m")
-                        {
-                            <label>Male</label>
-                        }
-                        else if (Model.gender == "f")
-                        {
-                            <label>Female</label>
-                        }
-                        else
-                        {
-                            <label>Not Mentioned</label>
-                        }
-                        <br />
-                        <br />
-                    </td>
+        <table>
+            <tr>
+                <td style="padding-left:100px">
+                    <label style="font-size:18px">Name:</label>
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:50px">
+                    @Html.DisplayFor(model => model.name)
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:150px">
+                    <label style="font-size:18px">Email:</label>
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:50px">
+                    @Html.DisplayFor(model => model.email)
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-left:100px">
+                    <label style="font-size:18px">Contact Number:</label>
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:50px">
+                    @Html.DisplayFor(model => model.contactNumber)
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:150px">
+                    <label style="font-size:18px">Gender:</label>
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:50px">
+                    @if (Model.gender == "m")
+                    {
+                        <label style="font-weight:100"> Male</label>
+                    }
+                    else if (Model.gender == "f")
+                    {
+                        <label style="font-weight:100"> Female</label>
+                    }
+                    else
+                    {
+                        <label>Not Mentioned</label>
+                    }
+                    <br />
+                    <br />
+                </td>
 
-                </tr>
+            </tr>
 
-                <tr>
-                    <td style="padding-left:50px">
-                        <label style="font-size:18px">Date of Birth:</label>
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:50px">
-                        @Html.DisplayFor(model => model.dob)
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:150px">
-                        <label style="font-size:18px">Address:</label>
-                        <br />
-                        <br />
-                    </td>
-                    <td style="padding-left:50px">
-                        @Html.DisplayFor(model => model.address)
-                        <br />
-                        <br />
-                    </td>
-                </tr>
-               
-            </table>
-            <br />
-            <br />
-            <div style="text-align:center">
-                <input type="submit" value="Back" class="button" />
-            </div>
-        }
+            <tr>
+                <td style="padding-left:100px">
+                    <label style="font-size:18px">Date of Birth:</label>
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:50px">
+                    @Html.DisplayFor(model => model.dob)
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:150px">
+                    <label style="font-size:18px">Address:</label>
+                    <br />
+                    <br />
+                </td>
+                <td style="padding-left:50px">
+                    @Html.DisplayFor(model => model.address)
+                    <br />
+                    <br />
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <br />
+        <div style="text-align:center">
+            <input type="button" value="Back" onclick="back()" class="button" />
+        </div>
+        <script>
+            function back() {
+                history.back();
+            }
+        </script>
+        
     </div>
 
 

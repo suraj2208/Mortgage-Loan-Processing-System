@@ -10,27 +10,32 @@ namespace Mortgage_Loan_Processing_System.Controllers
     public class HomeController : Controller
     {
         mlpsEntities mlps = new mlpsEntities();
-
-
-        public ActionResult Index()
+        public ActionResult Index( string id="ok")
         {
+            if (id=="not ok")
+            {
+                Response.Write("<script>alert('Invalid username or password')</script>");
+            }
+            else if (id=="ForgotPassword")
+            {
+                Response.Write("<script>alert('Contact our Customer service to reset your password. Customer care contact number: 1989')</script>");
+            }
             return View();
         }
         [HttpPost]
         public ActionResult Index(string username, string password)
         {
+
             Customer customer = mlps.Customers.Find(username);
             if (customer != null)
             {
                 if (customer.password == password)
-                {
-                    Response.Write("<script>alert('Welcome Customer')</script>");
+                {                    
                     return RedirectToAction("userDashboard", new { id = username });
                 }
                 else
-                {
-                    Response.Write("<script>alert('Invalid Username or Password.')</script>");
-                    return RedirectToAction("Index");
+                {                     
+                    return RedirectToAction("Index",new { id="not ok"});
                 }
             }
             else
@@ -56,14 +61,12 @@ namespace Mortgage_Loan_Processing_System.Controllers
                     }
                     else
                     {
-                        Response.Write("<script>alert('Invalid Username or Password.')</script>");
-                        return RedirectToAction("Index");
+                        return RedirectToAction("Index", new { id = "not ok" });
                     }
                 }
                 else
                 {
-                    Response.Write("<script>alert('Invalid Username or Password.')</script>");
-                    return RedirectToAction("Index");
+                    return RedirectToAction("Index", new { id = "not ok" });
                 }
             }
 
@@ -71,17 +74,8 @@ namespace Mortgage_Loan_Processing_System.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
-
             return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
+        }        
         public ActionResult Enquiry(string id)
         {
             ViewBag.username = id;
@@ -187,7 +181,7 @@ namespace Mortgage_Loan_Processing_System.Controllers
         }
         public ActionResult viewApplicant(string id)
         {
-            Customer customer = mlps.Customers.Find(int.Parse(id));
+            Customer customer = mlps.Customers.Find(id);            
             return View(customer);
         }
 

@@ -49,28 +49,27 @@
         <div style="text-align:center">
             @using (Html.BeginForm("Index", "Home", FormMethod.Post))
             {
-                <div>
-                    <label style="font-size:18px">UserName:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="text" style="border-radius:10px" name="username" required />
-                    <br />
-                    <br />
-                    <label style="font-size:18px">Password:</label>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="password" style="border-radius:10px" name="password" required />
-                    <br />
-                    <br />
-                    @Html.ActionLink("Forgot password", "Index")
-                    <br />
-                    <br />
-                    @*<button class="button" onclick="">@Html.ActionLink("Sign In","Enquiry",new {Style="color:white;"})</button>*@
-                    <input type="submit" value="Sign In" class="button" />
-                </div>
+            <div>
+                <label style="font-size:18px">UserName:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" style="border-radius:10px" name="username" required />
+                <br />
+                <br />
+                <label style="font-size:18px">Password:</label>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="password" style="border-radius:10px" name="password" required />
+                <br />
+                <br />
+                <br />
+                @Html.ActionLink("Forgot Password", "Index", new { id = "ForgotPassword" })
+                <br />
+                <br />
+                @*<button class="button" onclick="">@Html.ActionLink("Sign In","Enquiry",new {Style="color:white;"})</button>*@
+                <input type="submit" value="Sign In" class="button" />
+            </div>
             }
         <div>
-            <br />
-            <br />
-            <br />
+            <br />            
             <br />
             @using (Html.BeginForm("Enquiry", "Home",new { id="guest"}, FormMethod.Post))
             {

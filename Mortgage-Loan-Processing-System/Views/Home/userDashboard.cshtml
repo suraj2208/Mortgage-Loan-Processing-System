@@ -39,7 +39,7 @@
             </td>
             <td style="padding-left:850px">
                 <h5 style=" color:black">
-                    @Html.ActionLink("Profile", "Index")
+                    @Html.ActionLink("Profile", "viewApplicant", new { id =ViewBag.username})
                 </h5>
             </td>
             <td style="padding-left:30px">
@@ -54,7 +54,8 @@
             <h4>No applications found</h4>
         }
         else
-        { <table class="table">
+        {
+            <table class="table">
               <tr >
                   <th>
                       <label>Application ID</label>
@@ -73,31 +74,31 @@
                   </th>
                   <th></th>
               </tr>
-    @foreach (var item in Model)
-    {
-          <tr>
-              <td>
-                  @Html.DisplayFor(modelItem => item.ApplicationID)
-              </td>
-              <td>
-                  @Html.DisplayFor(modelItem => item.PropertyValue)
-              </td>
-              <td>
-                  @Html.DisplayFor(modelItem => item.Expected_Loan_Amount)
-              </td>
-              <td>
-                  @Html.DisplayFor(modelItem => item.DateOfApplication)
-              </td>
-              <td>
-                  @Html.DisplayFor(modelItem => item.Status)
-              </td>
-              <td>
-                  @Html.ActionLink("View", "viewApplication", new { id = item.ApplicationID})
-              </td>
-          </tr>
-    }
-</table>
-                }
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PropertyValue)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Expected_Loan_Amount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DateOfApplication)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Status)
+                    </td>
+                    <td>
+                        @Html.ActionLink("View", "viewApplication", new { id = item.ApplicationID })
+                    </td>
+                </tr>
+            }
+         </table>
+        }
 
         </div>
     <div style="text-align:center">
