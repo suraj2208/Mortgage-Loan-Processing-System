@@ -20,7 +20,8 @@
           <Property Name="AccountNo" Type="varchar" MaxLength="50" />
           <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Status" Type="varchar" MaxLength="50" />
-          <Property Name="OtherDocuments" Type="varchar" MaxLength="50" />
+          <Property Name="OtherDocuments" Type="varchar(max)" />
+          <Property Name="Report" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="Customers">
           <Key>
@@ -37,15 +38,14 @@
         </EntityType>
         <EntityType Name="Employees">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="username" />
           </Key>
-          <Property Name="EmployeeID" Type="int" Nullable="false" />
           <Property Name="name" Type="varchar" MaxLength="50" />
           <Property Name="dateOfBirth" Type="varchar" MaxLength="50" />
           <Property Name="contactNumber" Type="varchar" MaxLength="10" />
           <Property Name="address" Type="varchar" MaxLength="100" />
           <Property Name="email" Type="varchar" MaxLength="50" />
-          <Property Name="username" Type="varchar" MaxLength="50" />
+          <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="password" Type="varchar" MaxLength="50" />
           <Property Name="Role" Type="varchar" MaxLength="50" />
         </EntityType>
@@ -73,7 +73,8 @@
           <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="OtherDocuments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="OtherDocuments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Report" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Customer">
           <Key>
@@ -90,15 +91,14 @@
         </EntityType>
         <EntityType Name="Employee">
           <Key>
-            <PropertyRef Name="EmployeeID" />
+            <PropertyRef Name="username" />
           </Key>
-          <Property Name="EmployeeID" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="dateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="contactNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -116,6 +116,7 @@
           <EntitySetMapping Name="Applications">
             <EntityTypeMapping TypeName="mlpsModel.Application">
               <MappingFragment StoreEntitySet="Applications">
+                <ScalarProperty Name="Report" ColumnName="Report" />
                 <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
                 <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
                 <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
@@ -148,7 +149,6 @@
           <EntitySetMapping Name="Employees">
             <EntityTypeMapping TypeName="mlpsModel.Employee">
               <MappingFragment StoreEntitySet="Employees">
-                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
                 <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />

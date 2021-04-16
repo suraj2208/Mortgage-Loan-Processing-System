@@ -33,13 +33,16 @@
         <tr>
             <td>
                 <div>
-                    <h2>Hi, @ViewBag.Message</h2>
+                    <h3>Hi,</h3>
+                    <h2>@ViewBag.Message</h2>
                 </div>
             </td>
             <td style="padding-left:850px">
-                @Html.ActionLink("Profile", "Index")
+                <h5 style=" color:black">
+                    @Html.ActionLink("Profile", "Index")
+                </h5>
             </td>
-            <td style="padding-left:50px">
+            <td style="padding-left:30px">
                 @Html.ActionLink("Logout", "Index")
             </td>
         </tr>
@@ -54,7 +57,7 @@
         { <table class="table">
               <tr >
                   <th>
-                      Application ID
+                      <label>Application ID</label>
                   </th>
                   <th>
                       Poperty value
@@ -89,7 +92,7 @@
                   @Html.DisplayFor(modelItem => item.Status)
               </td>
               <td>
-                  @Html.ActionLink("View", "userDashboard", new { id = item.username})
+                  @Html.ActionLink("View", "viewApplication", new { id = item.ApplicationID})
               </td>
           </tr>
     }
@@ -106,7 +109,7 @@
         <br />
         @using (Html.BeginForm("Enquiry", "Home", new { id = ViewBag.username }, FormMethod.Post))
         {
-            <input type="submit" value="Know more" class="button2" />
+            <input  type="submit" value="Know more" class="button2" />
         }
     </div>
 </body>

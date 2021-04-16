@@ -15,7 +15,8 @@
     <Property Name="AccountNo" Type="varchar" MaxLength="50" />
     <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Status" Type="varchar" MaxLength="50" />
-    <Property Name="OtherDocuments" Type="varchar" MaxLength="50" />
+    <Property Name="OtherDocuments" Type="varchar(max)" />
+    <Property Name="Report" Type="varchar(max)" />
   </EntityType>
   <EntityType Name="Customers">
     <Key>
@@ -32,15 +33,14 @@
   </EntityType>
   <EntityType Name="Employees">
     <Key>
-      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="username" />
     </Key>
-    <Property Name="EmployeeID" Type="int" Nullable="false" />
     <Property Name="name" Type="varchar" MaxLength="50" />
     <Property Name="dateOfBirth" Type="varchar" MaxLength="50" />
     <Property Name="contactNumber" Type="varchar" MaxLength="10" />
     <Property Name="address" Type="varchar" MaxLength="100" />
     <Property Name="email" Type="varchar" MaxLength="50" />
-    <Property Name="username" Type="varchar" MaxLength="50" />
+    <Property Name="username" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="password" Type="varchar" MaxLength="50" />
     <Property Name="Role" Type="varchar" MaxLength="50" />
   </EntityType>

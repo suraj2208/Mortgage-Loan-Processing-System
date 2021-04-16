@@ -26,5 +26,6 @@ namespace Mortgage_Loan_Processing_System
         public string username { get; set; }
         public string Status { get; set; }
         public string OtherDocuments { get; set; }
+        public string Report { get; set; }
     }
 }

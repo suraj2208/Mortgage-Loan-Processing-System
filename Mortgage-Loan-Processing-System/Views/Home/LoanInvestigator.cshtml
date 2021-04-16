@@ -1,0 +1,115 @@
+﻿@model IEnumerable<Mortgage_Loan_Processing_System.Application>
+
+@{
+    ViewBag.Title = "LoanInvestigator";
+}
+
+<html>
+<head>
+    <style>
+        .button {
+            height: 30px;
+            width: 100px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            background-color: dodgerblue;
+            border-color: dodgerblue;
+            border-radius: 10px
+        }
+
+        .button2 {
+            height: 30px;
+            width: 100px;
+            font-size: 12px;
+            font-weight: bold;
+            color: white;
+            background-color: indianred;
+            border-color: indianred;
+            border-radius: 10px
+        }
+    </style>
+</head>
+<body style="background-color: #b0ebff">
+    <table>
+        <tr>
+            <td>
+                <div>
+                    <h4>Hi, @ViewBag.name</h4>
+                </div>
+            </td>
+            <td style="padding-left:880px">
+                @Html.ActionLink("Logout", "Index")
+            </td>
+        </tr>
+    </table>
+    <hr />
+    <h3>Applications - To be investigated</h3>
+    <hr />
+    <div style="text-align:center; height:400px">
+
+        @if (Model.Count() == 0)
+        {
+            <h4>No applications found</h4>
+        }
+        else
+        { <table class="table">
+                <tr>
+                    <th>
+                        <label>Application ID</label>
+                    </th>
+                    <th>
+                        Poperty value
+                    </th>
+                    <th>
+                        Expected Loan Amount
+                    </th>
+                    <th>
+                        Date of application
+                    </th>
+                    <th>
+                        Applicant Username
+                    </th>
+                    <th></th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ApplicationID)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PropertyValue)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Expected_Loan_Amount)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.DateOfApplication)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.username)
+                        </td>
+                        <td>
+                            @using (Html.BeginForm("viewApplication", "Home", new { id = item.ApplicationID }, FormMethod.Post))
+                            {
+                                <input type="submit" value="View" class="button" />
+                            }
+                        </td>                        
+                        <td>
+                            @using (Html.BeginForm("report", "Home", new { id = item.ApplicationID + "," + ViewBag.id }, FormMethod.Post))
+                            {
+                                <input type="text" style="border-radius:10px" name="report" placeholder="Report Link" required />
+                                <input type="submit" value="Submit Report" class="button2" />
+                            }
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+
+    </div>
+    <br />
+    <hr />    
+</body>
+</html>

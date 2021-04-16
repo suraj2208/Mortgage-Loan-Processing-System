@@ -1,0 +1,125 @@
+﻿@model Mortgage_Loan_Processing_System.Customer
+@{
+    ViewBag.Title = "viewApplicant";
+}
+
+<html>
+<head>
+    <style>
+        .button {
+            height: 50px;
+            width: 250px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            background-color: indianred;
+            border-color: indianred;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body background="~/BG.png">
+    <div style="text-align:center">
+        <h2 style="font-weight:bold">Applicant's Details</h2>
+        <br />
+        <br />
+    </div>
+    <div>
+        <br />
+        <br />
+        @using (Html.BeginForm("Dashboard", "Home", new { id = ViewBag.username }, FormMethod.Post))
+        {
+            <table>
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Name:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        @Html.DisplayFor(model => model.name)
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Email:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        @Html.DisplayFor(model => model.email)
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Contact Number:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        @Html.DisplayFor(model => model.contactNumber)
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Gender:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        @if (Model.gender == "m")
+                        {
+                            <label>Male</label>
+                        }
+                        else if (Model.gender == "f")
+                        {
+                            <label>Female</label>
+                        }
+                        else
+                        {
+                            <label>Not Mentioned</label>
+                        }
+                        <br />
+                        <br />
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td style="padding-left:50px">
+                        <label style="font-size:18px">Date of Birth:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        @Html.DisplayFor(model => model.dob)
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:150px">
+                        <label style="font-size:18px">Address:</label>
+                        <br />
+                        <br />
+                    </td>
+                    <td style="padding-left:50px">
+                        @Html.DisplayFor(model => model.address)
+                        <br />
+                        <br />
+                    </td>
+                </tr>
+               
+            </table>
+            <br />
+            <br />
+            <div style="text-align:center">
+                <input type="submit" value="Back" class="button" />
+            </div>
+        }
+    </div>
+
+
+</body>
+</html>
+

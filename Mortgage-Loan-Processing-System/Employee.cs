@@ -14,7 +14,6 @@ namespace Mortgage_Loan_Processing_System
     
     public partial class Employee
     {
-        public int EmployeeID { get; set; }
         public string name { get; set; }
         public string dateOfBirth { get; set; }
         public string contactNumber { get; set; }

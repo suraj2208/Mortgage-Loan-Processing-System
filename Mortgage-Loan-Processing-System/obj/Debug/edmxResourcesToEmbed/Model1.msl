@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Applications">
       <EntityTypeMapping TypeName="mlpsModel.Application">
         <MappingFragment StoreEntitySet="Applications">
+          <ScalarProperty Name="Report" ColumnName="Report" />
           <ScalarProperty Name="ApplicationID" ColumnName="ApplicationID" />
           <ScalarProperty Name="PropertyType" ColumnName="PropertyType" />
           <ScalarProperty Name="PropertyValue" ColumnName="PropertyValue" />
@@ -36,7 +37,6 @@
     <EntitySetMapping Name="Employees">
       <EntityTypeMapping TypeName="mlpsModel.Employee">
         <MappingFragment StoreEntitySet="Employees">
-          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="dateOfBirth" ColumnName="dateOfBirth" />
           <ScalarProperty Name="contactNumber" ColumnName="contactNumber" />

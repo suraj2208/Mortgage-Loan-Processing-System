@@ -15,7 +15,8 @@
     <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="OtherDocuments" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="OtherDocuments" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Report" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Customer">
     <Key>
@@ -32,15 +33,14 @@
   </EntityType>
   <EntityType Name="Employee">
     <Key>
-      <PropertyRef Name="EmployeeID" />
+      <PropertyRef Name="username" />
     </Key>
-    <Property Name="EmployeeID" Type="Int32" Nullable="false" />
     <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="dateOfBirth" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="contactNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <Property Name="address" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="username" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
